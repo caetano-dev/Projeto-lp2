@@ -7,10 +7,6 @@ public class Retangulo implements Forma {
         this.altura = altura;
     }
 
-    public float getLado() {
-        return lado;
-    }
-
     public float getAltura() {
         return altura;
     }
@@ -25,7 +21,11 @@ public class Retangulo implements Forma {
         return 2 * (lado + altura);
     }
 
+    public float getLado() {
+        return lado;
+    }
+
     public void imprimirDados() {
-        System.out.println("Retângulo - Lado: " + lado + ", Altura: " + altura);
+        System.out.println("Lado do Retângulo: " + lado + ", Altura: " + altura);
     }
 }

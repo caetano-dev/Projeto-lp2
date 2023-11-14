@@ -11,15 +11,15 @@ public class Quadrado implements Forma {
 
     @Override
     public float calcularArea() {
-        return lado * lado;
+        return lado*lado;
     }
 
     @Override
     public float calcularPerimetro() {
-        return 4 * lado;
+        return 4*lado;
     }
 
     public void imprimirDados() {
-        System.out.println("Quadrado - Lado: " + lado);
+        System.out.println("Lado do Quadrado: " + lado);
     }
 }

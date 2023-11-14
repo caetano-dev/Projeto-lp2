@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class DemoFormas {
@@ -7,14 +6,14 @@ public class DemoFormas {
         char continuar;
 
         do {
-            System.out.println("Escolha uma forma (R - Retângulo, C - Círculo, Q - Quadrado):");
+            System.out.println("Escolha uma forma: r para Retângulo, c para Círculo e q para Quadrado:");
             char escolha = scanner.next().charAt(0);
 
             switch (escolha) {
-                case 'R':
-                    System.out.println("Digite o lado do retângulo:");
+                case 'r':
+                    System.out.println("lado do retângulo:");
                     float ladoRetangulo = scanner.nextFloat();
-                    System.out.println("Digite a altura do retângulo:");
+                    System.out.println("altura do retângulo:");
                     float alturaRetangulo = scanner.nextFloat();
 
                     Retangulo retangulo = new Retangulo(ladoRetangulo, alturaRetangulo);
@@ -23,8 +22,8 @@ public class DemoFormas {
                     System.out.println("Perímetro do retângulo: " + retangulo.calcularPerimetro());
                     break;
 
-                case 'C':
-                    System.out.println("Digite o raio do círculo:");
+                case 'c':
+                    System.out.println("raio do círculo:");
                     float raioCirculo = scanner.nextFloat();
 
                     Circulo circulo = new Circulo(raioCirculo);
@@ -33,8 +32,8 @@ public class DemoFormas {
                     System.out.println("Perímetro do círculo: " + circulo.calcularPerimetro());
                     break;
 
-                case 'Q':
-                    System.out.println("Digite o lado do quadrado:");
+                case 'q':
+                    System.out.println("lado do quadrado:");
                     float ladoQuadrado = scanner.nextFloat();
 
                     Quadrado quadrado = new Quadrado(ladoQuadrado);
@@ -44,7 +43,7 @@ public class DemoFormas {
                     break;
 
                 default:
-                    System.out.println("Escolha inválida!");
+                    System.out.println("Invalido");
                     break;
             }
 
