@@ -24,7 +24,6 @@ public class LoginGUI extends JFrame {
         passwordField = new JPasswordField();
         clearButton = new JButton("Limpar");
         loginButton = new JButton("Entrar");
-
         // Set layout using BorderLayout as an example
         setLayout(new BorderLayout());
 
@@ -38,6 +37,8 @@ public class LoginGUI extends JFrame {
         loginPanel.add(passwordField);
         loginPanel.add(loginButton);
         loginPanel.add(clearButton);
+        loginPanel.add(new JLabel()); // Placeholder for alignment
+
 
         add(loginPanel, BorderLayout.CENTER);
 
@@ -79,7 +80,7 @@ public class LoginGUI extends JFrame {
         loginButton.addActionListener(actionListener);
     }
 
-    public String getName() {
+     public String getName() {
         return new String(usernameField.getText());
     }
 

@@ -46,10 +46,6 @@ public class Controller {
             }
         });
 
-        // Additional methods to handle interactions between the model and views
-        // ...
     }
 
-    // Additional methods to handle interactions between the model and views
-    // ...
 }

@@ -1,125 +1,125 @@
 /**
- * The Model class represents a data model for a book management system.
- * It contains properties for username, password, book code, book name, email, and selected category.
- * It provides getter and setter methods for accessing and modifying these properties.
+ * A classe Model representa um modelo de dados para um sistema de gerenciamento de livros.
+ * Contém propriedades para nome de usuário, senha, código do livro, nome do livro, email e categoria selecionada.
+ * Fornece métodos getter e setter para acessar e modificar essas propriedades.
  * 
- * @author Your Name
+ * @author Pedro Caetano Pires
  * @version 1.0
- * @since 2021-10-01
+ * @since 2023-12-02
  */
 public class Model {
-    // The username of the user
+    // O nome de usuário do usuário
     private String username;
-    // The password of the user
+    // A senha do usuário
     private String password;
-    // The code of the book
+    // O código do livro
     private String bookCode;
-    // The name of the book
+    // O nome do livro
     private String bookName;
-    // The email of the user
+    // O email do usuário
     private String email;
-    // The selected category by the user
+    // A categoria selecionada pelo usuário
     private String selectedCategory;
 
     /**
-     * Returns the username of the user.
-     * @return A string representing the username.
+     * Retorna o nome de usuário do usuário.
+     * @return Uma string representando o nome de usuário.
      */
     public String getUsername() {
         return username;
     }
 
     /**
-     * Sets the username of the user.
-     * @param username A string containing the username.
+     * Define o nome de usuário do usuário.
+     * @param username Uma string contendo o nome de usuário.
      */
     public void setUsername(String username) {
         this.username = username;
     }
 
     /**
-     * Returns the password of the user.
-     * @return A string representing the password.
+     * Retorna a senha do usuário.
+     * @return Uma string representando a senha.
      */
     public String getPassword() {
         return password;
     }
 
     /**
-     * Sets the password of the user.
-     * @param password A string containing the password.
+     * Define a senha do usuário.
+     * @param password Uma string contendo a senha.
      */
     public void setPassword(String password) {
         this.password = password;
     }
 
     /**
-     * Returns the book code.
-     * @return A string representing the book code.
+     * Retorna o código do livro.
+     * @return Uma string representando o código do livro.
      */
     public String getBookCode() {
         return bookCode;
     }
 
     /**
-     * Sets the book code.
-     * @param bookCode A string containing the book code.
+     * Define o código do livro.
+     * @param bookCode Uma string contendo o código do livro.
      */
     public void setBookCode(String bookCode) {
         this.bookCode = bookCode;
     }
 
     /**
-     * Returns the book name.
-     * @return A string representing the book name.
+     * Retorna o nome do livro.
+     * @return Uma string representando o nome do livro.
      */
     public String getBookName() {
         return bookName;
     }
 
     /**
-     * Sets the book name.
-     * @param bookName A string containing the book name.
+     * Define o nome do livro.
+     * @param bookName Uma string contendo o nome do livro.
      */
     public void setBookName(String bookName) {
         this.bookName = bookName;
     }
 
     /**
-     * Returns the email of the user.
-     * @return A string representing the email.
+     * Retorna o email do usuário.
+     * @return Uma string representando o email.
      */
     public String getEmail() {
         return email;
     }
 
     /**
-     * Sets the email of the user.
-     * @param email A string containing the email.
+     * Define o email do usuário.
+     * @param email Uma string contendo o email.
      */
     public void setEmail(String email) {
         this.email = email;
     }
 
     /**
-     * Returns the selected category by the user.
-     * @return A string representing the selected category.
+     * Retorna a categoria selecionada pelo usuário.
+     * @return Uma string representando a categoria selecionada.
      */
     public String getSelectedCategory() {
         return selectedCategory;
     }
 
     /**
-     * Sets the selected category by the user.
-     * @param selectedCategory A string containing the selected category.
+     * Define a categoria selecionada pelo usuário.
+     * @param selectedCategory Uma string contendo a categoria selecionada.
      */
     public void setSelectedCategory(String selectedCategory) {
         this.selectedCategory = selectedCategory;
     }
 
     /**
-     * Returns the table data.
-     * @return An object representing the table data.
+     * Retorna os dados da tabela.
+     * @return Um objeto representando os dados da tabela.
      */
     public Object getTableData() {
         return null;

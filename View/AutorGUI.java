@@ -88,7 +88,7 @@ public class AutorGUI extends JFrame {
         });
 
         // Set frame properties
-        setTitle("Informação do autor");
+        setTitle("Cadastro do autores");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 400);
         setLocationRelativeTo(null); // Center the window
