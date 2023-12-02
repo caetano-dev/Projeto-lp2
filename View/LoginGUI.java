@@ -8,9 +8,13 @@ import java.awt.GridLayout;
 import java.awt.event.*;
 
 /**
- * The LoginGUI class represents a graphical user interface for a login screen.
- * It extends the JFrame class and provides functionality for entering a username
- * and password, performing login action, and displaying error messages.
+ * A classe LoginGUI representa uma interface gráfica de usuário para uma tela de login.
+ * Ela estende a classe JFrame e fornece funcionalidade para inserir um nome de usuário
+ * e senha, realizar ação de login e exibir mensagens de erro.
+ * 
+ * @author Pedro Caetano Pires
+ * @version 1.0
+ * @since 2023-12-02
  */
 public class LoginGUI extends JFrame {
     private JTextField usernameField;
@@ -19,12 +23,13 @@ public class LoginGUI extends JFrame {
     private JButton clearButton;
 
     public LoginGUI() {
-        // Initialize components
+        // Inicializa os componentes
         usernameField = new JTextField();
         passwordField = new JPasswordField();
+        
         clearButton = new JButton("Limpar");
         loginButton = new JButton("Entrar");
-        // Set layout using BorderLayout as an example
+        // Define o layout usando BorderLayout como exemplo
         setLayout(new BorderLayout());
 
         JPanel loginPanel = new JPanel();
@@ -37,57 +42,60 @@ public class LoginGUI extends JFrame {
         loginPanel.add(passwordField);
         loginPanel.add(loginButton);
         loginPanel.add(clearButton);
-        loginPanel.add(new JLabel()); // Placeholder for alignment
-
+        loginPanel.add(new JLabel()); // Espaço reservado para alinhamento
 
         add(loginPanel, BorderLayout.CENTER);
 
-        // Action listeners for buttons
+        // Listeners de ação para os botões
         clearButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Clear username and password fields
+                // Limpa os campos de nome de usuário e senha
                 usernameField.setText("");
                 passwordField.setText("");
             }
         });
 
-        // loginButton.addActionListener(new ActionListener() {
-        //     public void actionPerformed(ActionEvent e) {
-        //         // Perform login action here
-        //         String enteredUsername = usernameField.getText();
-        //         String enteredPassword = new String(passwordField.getPassword());
-
-        //         // Hardcoded validation (replace with proper authentication)
-        //         if (enteredUsername.equals("user") && enteredPassword.equals("12345")) {
-        //             JOptionPane.showMessageDialog(null, "Login feito com sucesso!");
-        //             openRegistrationScreen(); // Method to open registration screen
-        //         } else {
-        //             JOptionPane.showMessageDialog(null, "Login ou senha errados. Tente novamente.");
-        //         }
-        //     }
-        // });
     }
 
+    /**
+     * Abre a tela de registro.
+     */
     public void openRegistrationScreen() {
-        // Logic to open the registration screen
-        // Create an instance of AutorGUI or navigate to the registration screen
+        // Lógica para abrir a tela de registro
+        // Cria uma instância de AutorGUI ou navega para a tela de registro
         AutorGUI autorGUI = new AutorGUI();
         autorGUI.setVisible(true);
-        this.dispose(); // Close the login screen
+        this.dispose(); // Fecha a tela de login
     }
 
+    /**
+     * Define o listener de ação de login.
+     * @param actionListener O listener de ação.
+     */
     public void setLoginActionListener(ActionListener actionListener) {
         loginButton.addActionListener(actionListener);
     }
 
-     public String getName() {
+    /**
+     * Retorna o nome do usuário.
+     * @return Uma string representando o nome do usuário.
+     */
+    public String getName() {
         return new String(usernameField.getText());
     }
 
+    /**
+     * Retorna a senha.
+     * @return Uma string representando a senha.
+     */
     public String getPassword() {
         return new String(passwordField.getPassword());
     }
 
+    /**
+     * Exibe uma mensagem de erro.
+     * @param errorMessage A mensagem de erro a ser exibida.
+     */
     public void displayErrorMessage(String errorMessage) {
         JOptionPane.showMessageDialog(null, errorMessage);
     }
