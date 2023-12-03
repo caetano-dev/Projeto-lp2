@@ -1,0 +1,88 @@
+# Arquivos temporários
+*.class
+*.log
+*.war
+*.ear
+*.jar
+
+# Arquivos de log
+log/
+logs/
+
+# Diretórios de saída
+target/
+bin/
+out/
+
+# Arquivos de configuração
+.vscode/
+.settings/
+.project
+.classpath
+
+# Cache e arquivos gerados automaticamente
+*.cache
+*.project
+*.pydevproject
+.project
+.settings/
+*.properties
+
+# Arquivos do Eclipse
+.metadata/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# IntelliJ
+.idea/
+
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# JDeveloper
+.jdeveloper/
+jdev/
+classes/
+
+# BlueJ
+.bluej/
+
+# Gradle
+.gradle/
+build/
+
+# Spring Boot
+.DS_Store
+.springBeans
+
+# Arquivos de configuração do Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/
+
+# Arquivos de configuração específicos do sistema operacional
+Thumbs.db
+.DS_Store
+
+# Arquivos de log
+*.log
