@@ -34,11 +34,11 @@ public class Main {
         // Configura a janela de login
         loginGUI.setTitle("Login");
         loginGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        loginGUI.setSize(400, 300);
+        loginGUI.setSize(200, 300);
         loginGUI.setLocationRelativeTo(null); // Centraliza a janela
         loginGUI.setVisible(true);
         
         // Ajusta o tamanho da janela de login de acordo com seus componentes
-        loginGUI.pack();
+        //loginGUI.pack();
     }
 }

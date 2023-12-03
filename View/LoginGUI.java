@@ -34,7 +34,7 @@ public class LoginGUI extends JFrame {
 
         JPanel loginPanel = new JPanel();
         loginPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-        loginPanel.setLayout(new GridLayout(3, 2));
+        loginPanel.setLayout(new GridLayout(0, 2));
 
         loginPanel.add(new JLabel("Login: "));
         loginPanel.add(usernameField);
