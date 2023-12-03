@@ -1,13 +1,6 @@
 package View;
-
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
-
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
-import java.awt.event.*;
-
 
 /**
  * A classe AutorGUI representa uma interface gráfica de usuário para registrar informações do autor.
@@ -28,38 +21,59 @@ public class AutorGUI extends JFrame {
     private JTable table;
     private DefaultTableModel tableModel;
 
+    /**
+     * Construtor para a classe AutorGUI. Inicializa a interface gráfica de usuário.
+     */
     public AutorGUI() {
+        setLayout(null);
+
+        JLabel bookCodeLabel = new JLabel("Código: ");
+        bookCodeLabel.setBounds(200, 20, 100, 25);
+        add(bookCodeLabel);
+
         bookCodeField = new JTextField();
+        bookCodeField.setBounds(200, 50, 200, 25);
+        add(bookCodeField);
+
+        JLabel bookNameLabel = new JLabel("Nome: ");
+        bookNameLabel.setBounds(200, 80, 100, 25);
+        add(bookNameLabel);
+
         bookNameField = new JTextField();
+        bookNameField.setBounds(200, 110, 200, 25);
+        add(bookNameField);
+
+        JLabel emailLabel = new JLabel("Email: ");
+        emailLabel.setBounds(200, 140, 100, 25);
+        add(emailLabel);
+
         emailField = new JTextField();
+        emailField.setBounds(200, 170, 200, 25);
+        add(emailField);
+
+        JLabel categoryLabel = new JLabel("Tipo de Escrita: ");
+        categoryLabel.setBounds(200, 200, 100, 25);
+        add(categoryLabel);
+
         String[] categories = {"Leitura Infantil", "Leitura Juvenil", "Leitura Adulto"};
         categoryDropdown = new JComboBox<>(categories);
-        clearButton = new JButton("Limpar");
+        categoryDropdown.setBounds(200, 230, 200, 25);
+        add(categoryDropdown);
+
         submitButton = new JButton("Enviar");
+        submitButton.setBounds(200, 260, 100, 25);
+        add(submitButton);
+
+        clearButton = new JButton("Limpar");
+        clearButton.setBounds(310, 260, 100, 25);
+        add(clearButton);
 
         String[] columnNames = {"Código", "Nome", "Email", "Categoria"};
         tableModel = new DefaultTableModel(columnNames, 0);
         table = new JTable(tableModel);
-
-        setLayout(new BorderLayout());
-
-        JPanel inputPanel = new JPanel();
-        inputPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-        inputPanel.setLayout(new GridLayout(6, 2));
-
-        inputPanel.add(new JLabel("Código: "));
-        inputPanel.add(bookCodeField);
-        inputPanel.add(new JLabel("Nome: "));
-        inputPanel.add(bookNameField);
-        inputPanel.add(new JLabel("Email: "));
-        inputPanel.add(emailField);
-        inputPanel.add(new JLabel("Tipo de Escrita: "));
-        inputPanel.add(categoryDropdown);
-        inputPanel.add(submitButton);
-        inputPanel.add(clearButton);
-
-        add(inputPanel, BorderLayout.NORTH);
-        add(new JScrollPane(table), BorderLayout.CENTER);
+        JScrollPane scrollPane = new JScrollPane(table);
+        scrollPane.setBounds(15, 300, 560, 200);
+        add(scrollPane);
 
         clearButton.addActionListener(e -> {
             bookCodeField.setText("");
@@ -85,18 +99,20 @@ public class AutorGUI extends JFrame {
 
         setTitle("Cadastro do autores");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(600, 400);
+        setSize(600, 550);
         setLocationRelativeTo(null); 
         setVisible(true);
     }
 
+     /**
+     * Método principal. Cria uma instância da classe AutorGUI.
+     * 
+     * @param args Argumentos de linha de comando
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             new AutorGUI();
         });
-    }
-
-    public void setTableModel(Object tableData) {
     }
 
     public void updateTableData(Object tableData) {

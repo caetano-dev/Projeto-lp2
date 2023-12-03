@@ -30,12 +30,8 @@ public class Controller {
         this.loginGUI = loginGUI;
         this.autorGUI = autorGUI;
 
-        // Configura as interações entre as visualizações e o modelo
-
-        // Exemplo: Passando dados do modelo para AutorGUI
         autorGUI.updateTableData(model.getTableData());
 
-        // Exemplo: Manipulando ação do usuário de LoginGUI para abrir AutorGUI
         loginGUI.setLoginActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -43,14 +39,9 @@ public class Controller {
                 String username = loginGUI.getName();
                 String password = loginGUI.getPassword();
 
-                System.out.println(username);
-                System.out.println(password);
-
                 if (username.equals("user") && password.equals("12345")) {
                     loginGUI.setVisible(false);
-
                     JOptionPane.showMessageDialog(null, "Login feito com sucesso!");
-
                     loginGUI.openRegistrationScreen();
                 } else {
                     loginGUI.displayErrorMessage("Login ou senha errados. Tente novamente.");
