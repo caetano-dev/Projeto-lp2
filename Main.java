@@ -25,17 +25,26 @@ public class Main {
         // Cria uma instância da interface gráfica de usuário do autor
         AutorGUI autorGUI = new AutorGUI();
 
-        // Cria uma instância do controlador, passando o modelo e as interfaces gráficas de usuário
+        // Cria uma instância do controlador, passando o modelo e as interfaces gráficas
+        // de usuário
         Controller controller = new Controller(model, loginGUI, autorGUI);
 
         // Inicialmente, a interface gráfica de usuário do autor não é visível
         autorGUI.setVisible(false);
 
         // Configura a janela de login
+        configureLoginGUI(loginGUI);
+    }
+
+    private static void configureLoginGUI(LoginGUI loginGUI) {
+        final int WIDTH = 350;
+        final int HEIGHT = 300;
+
+        // Configura a janela de login
         loginGUI.setTitle("Login");
         loginGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        loginGUI.setSize(350, 300);
-        loginGUI.setLocationRelativeTo(null); // Centraliza a janela
+        loginGUI.setSize(WIDTH, HEIGHT);
+        loginGUI.setLocationRelativeTo(null);
         loginGUI.setVisible(true);
     }
 }

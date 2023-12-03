@@ -1,11 +1,18 @@
 package View;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 /**
- * A classe AutorGUI representa uma interface gráfica de usuário para registrar informações do autor.
- * Ela estende a classe JFrame e fornece um formulário para os usuários inserirem detalhes do livro, como código do livro,
- * nome do livro, email e categoria. Também exibe uma tabela para mostrar os dados registrados.
+ * A classe AutorGUI representa uma interface gráfica de usuário para registrar
+ * informações do autor.
+ * Ela estende a classe JFrame e fornece um formulário para os usuários
+ * inserirem detalhes do livro, como código do livro,
+ * nome do livro, email e categoria. Também exibe uma tabela para mostrar os
+ * dados registrados.
  * 
  * @author Gabriel Pereira Monte
  * @version 1.0
@@ -55,7 +62,7 @@ public class AutorGUI extends JFrame {
         categoryLabel.setBounds(200, 200, 100, 25);
         add(categoryLabel);
 
-        String[] categories = {"Leitura Infantil", "Leitura Juvenil", "Leitura Adulto"};
+        String[] categories = { "Leitura Infantil", "Leitura Juvenil", "Leitura Adulto" };
         categoryDropdown = new JComboBox<>(categories);
         categoryDropdown.setBounds(200, 230, 200, 25);
         add(categoryDropdown);
@@ -68,7 +75,7 @@ public class AutorGUI extends JFrame {
         clearButton.setBounds(310, 260, 100, 25);
         add(clearButton);
 
-        String[] columnNames = {"Código", "Nome", "Email", "Categoria"};
+        String[] columnNames = { "Código", "Nome", "Email", "Categoria" };
         tableModel = new DefaultTableModel(columnNames, 0);
         table = new JTable(tableModel);
         JScrollPane scrollPane = new JScrollPane(table);
@@ -82,6 +89,30 @@ public class AutorGUI extends JFrame {
             categoryDropdown.setSelectedIndex(0);
         });
 
+        bookCodeField.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+
+                if (!Character.isDigit(c)) {
+                    e.consume(); // Ignora a tecla se não for um dígito
+
+                    // Exibe uma mensagem de aviso
+                    JOptionPane.showMessageDialog(null, "Por favor, digite apenas números no campo Código.");
+                }
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                // Não é necessário para o seu caso, pode deixar vazio
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                // Não é necessário para o seu caso, pode deixar vazio
+            }
+        });
+
         submitButton.addActionListener(e -> {
             String bookCode = bookCodeField.getText();
             String bookName = bookNameField.getText();
@@ -92,7 +123,7 @@ public class AutorGUI extends JFrame {
                 JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos.");
             } else {
                 JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!");
-                Object[] rowData = {bookCode, bookName, email, selectedCategory};
+                Object[] rowData = { bookCode, bookName, email, selectedCategory };
                 tableModel.addRow(rowData);
             }
         });
@@ -100,11 +131,11 @@ public class AutorGUI extends JFrame {
         setTitle("Cadastro do autores");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 550);
-        setLocationRelativeTo(null); 
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
-     /**
+    /**
      * Método principal. Cria uma instância da classe AutorGUI.
      * 
      * @param args Argumentos de linha de comando
