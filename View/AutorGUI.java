@@ -121,6 +121,8 @@ public class AutorGUI extends JFrame {
 
             if (bookCode.isEmpty() || bookName.isEmpty() || email.isEmpty() || selectedCategory.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos.");
+            } else if (!isValidEmail(email)) {
+                JOptionPane.showMessageDialog(null, "Por favor, digite um email válido.");
             } else {
                 JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!");
                 Object[] rowData = { bookCode, bookName, email, selectedCategory };
@@ -128,11 +130,23 @@ public class AutorGUI extends JFrame {
             }
         });
 
+
         setTitle("Cadastro do autores");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 550);
         setLocationRelativeTo(null);
         setVisible(true);
+    }
+
+    /**
+     * Verifica se o email é válido.
+     * 
+     * @param email O email a ser verificado.
+    */
+    private boolean isValidEmail(String email) {
+        // Regular expression pattern for email validation
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        return email.matches(emailRegex);
     }
 
     /**
